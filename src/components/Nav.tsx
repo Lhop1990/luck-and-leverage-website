@@ -29,11 +29,6 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile menu on navigation.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-[220ms] ease-[var(--ease-standard)] ${
@@ -97,6 +92,7 @@ export function Nav() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  onClick={() => setOpen(false)}
                   className="inline-flex items-center min-h-12 font-heading text-sm uppercase tracking-nav text-charcoal-800 hover:text-green-700 border-b border-charcoal/14 transition-colors"
                 >
                   {l.label}
@@ -104,6 +100,7 @@ export function Nav() {
               ))}
               <Link
                 href="/contact"
+                onClick={() => setOpen(false)}
                 className="mt-5 inline-flex items-center justify-center min-h-12 px-5 bg-green-500 text-charcoal-800 font-heading font-medium text-xs uppercase tracking-nav hover:bg-green-400 transition-colors"
               >
                 Book a call

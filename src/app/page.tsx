@@ -72,7 +72,9 @@ export default function Home() {
       <section className="relative overflow-hidden bg-ivory-100">
         <Container className="pt-14 sm:pt-20 md:pt-28 pb-20 md:pb-30">
           <p className="eyebrow mb-6 md:mb-8 fade-up">Advisory · Search</p>
-          <h1 className="fade-up text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] text-balance">
+          {/* Hard line break plus a ~20ch measure keeps each line near-equal,
+              per the headline rules in the brand guidelines. */}
+          <h1 className="fade-up text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] max-w-[20ch]">
             Most firms want <span className="emph">great recruiters.</span>
             <br />
             Few are obsessive enough to <span className="emph">win them.</span>

@@ -200,11 +200,15 @@ export default async function CaseStudyPage({ params }: Params) {
       {/* TESTIMONIAL */}
       {study.testimonial && (
         <Section eyebrow="What the client said" tone="sunken">
-          <figure className="max-w-4xl">
-            <blockquote className="font-heading uppercase text-xl md:text-2xl lg:text-3xl leading-[1.25] text-balance text-charcoal-800">
+          {/* Client testimonials run long, so they are set as body copy in
+              Inter rather than the uppercase display face — the brand
+              reserves Chakra Petch pull quotes for short lines. The 3px
+              green rule marks the block as featured. */}
+          <figure className="max-w-4xl border-l-[3px] border-green-500 pl-6 md:pl-8">
+            <blockquote className="text-lg md:text-xl leading-relaxed text-charcoal-800">
               &ldquo;{study.testimonial.quote}&rdquo;
             </blockquote>
-            <figcaption className="mt-8 eyebrow">
+            <figcaption className="mt-6 eyebrow">
               {study.testimonial.author}
             </figcaption>
           </figure>
