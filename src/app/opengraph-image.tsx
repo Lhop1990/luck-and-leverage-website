@@ -12,7 +12,7 @@ export default async function OpengraphImage() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#000000",
+          background: "#282727",
           padding: "80px",
           display: "flex",
           flexDirection: "column",
@@ -25,7 +25,7 @@ export default async function OpengraphImage() {
             fontSize: 22,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#caf53c",
+            color: "#b3c142",
           }}
         >
           Luck &amp; Leverage
@@ -43,23 +43,23 @@ export default async function OpengraphImage() {
           }}
         >
           <span>Most firms want to hire</span>
-          <span style={{ color: "#caf53c" }}>great recruiters.</span>
+          <span style={{ color: "#b3c142" }}>great recruiters.</span>
           <span>Few are obsessive</span>
-          <span>enough to <span style={{ color: "#caf53c" }}>win them.</span></span>
+          <span>enough to <span style={{ color: "#b3c142" }}>win them.</span></span>
         </div>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            color: "#8a8a8a",
+            color: "rgba(255,255,255,0.62)",
             fontSize: 22,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
           }}
         >
           <span>Advisory · Search</span>
-          <span style={{ color: "#caf53c" }}>luckandleverage.com</span>
+          <span style={{ color: "#b3c142" }}>luckandleverage.com</span>
         </div>
       </div>
     ),

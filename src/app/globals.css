@@ -1,54 +1,135 @@
 @import "tailwindcss";
 
+/*
+  Luck & Leverage brand design system.
+  Token values are lifted verbatim from the Claude Design project
+  "Luck & Leverage Design System" (tokens/colors.css, typography.css,
+  spacing.css, surface.css, motion.css).
+
+  Palette proportions per the brand guidelines (p.14):
+  Charcoal 40% · Ivory 40% · Light Green 10% · White 10%.
+  Green is an accent only — never a background for long-form text,
+  never used for body copy, max one green element per screen region.
+*/
+
 @theme {
-  --color-bg: #000000;
-  --color-ink: #ffffff;
-  --color-lime: #caf53c;
-  --color-rule: #1f1f1f;
+  /* ---- Brand palette (Brand Identity Guidelines, p.14) ---- */
+  --color-charcoal: #282727;
+  --color-ivory: #d5d1c5;
+  --color-green: #b3c142;
+  --color-white: #ffffff;
 
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
+  /* ---- Ramps derived from the four brand colours (oklch-harmonised).
+         These exist only to make interaction states possible; they
+         introduce no new hue. ---- */
+  --color-charcoal-900: #1c1b1b;
+  --color-charcoal-800: #282727;
+  --color-charcoal-700: #343333;
+  --color-charcoal-600: #454444;
+  --color-charcoal-500: #6b6968;
+  --color-charcoal-400: #8f8d8a;
+  --color-charcoal-300: #b5b2ae;
 
-  --tracking-tight: -0.02em;
-  --tracking-wide: 0.04em;
-  --tracking-wider: 0.12em;
+  --color-ivory-100: #f5f3ee;
+  --color-ivory-200: #eae7de;
+  --color-ivory-300: #e0dcd2;
+  --color-ivory-400: #d5d1c5;
+  --color-ivory-500: #bdb8a9;
+
+  --color-green-300: #cbd67e;
+  --color-green-400: #c2ce62;
+  --color-green-500: #b3c142;
+  --color-green-600: #9caa35;
+  --color-green-700: #7f8c28;
+
+  /* Green used as TEXT on a light ground.
+     #7f8c28 (green-700) is the design system's own --text-accent and
+     clears 3.4:1. The brand deck sets headline emphasis in #b3c142,
+     which is only ~2.3:1 on ivory — below WCAG AA even for large text.
+     Change this one value to #b3c142 to match the deck exactly. */
+  --color-emph: #7f8c28;
+
+  /* Form validation — no semantic palette exists in the guidelines. */
+  --color-error: #9e3b2b;
+  --color-error-surface: #f7ece9;
+
+  /* ---- Typography ---- */
+  --font-heading: var(--font-chakra), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  --tracking-display: -0.01em;
+  --tracking-nav: 0.08em;
+  --tracking-label: 0.14em;
+
+  --leading-display: 1.02;
+  --leading-heading: 1.1;
+  --leading-snug: 1.35;
+
+  /* Layout widths are applied directly (max-w-[1320px]) rather than as
+     theme tokens: the --container-* namespace generates max-w-* utilities
+     and would collide with Tailwind's built-in max-w-max. */
+
+  /* ---- Motion: restrained and mechanical. No bounce, no spring. ---- */
+  --ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
 @layer base {
   html {
-    background: var(--color-bg);
-    color: var(--color-ink);
+    background: var(--color-ivory-100);
+    color: var(--color-charcoal-700);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    /* Offset anchor scrolls so they don't land under the sticky nav. */
-    scroll-padding-top: 80px;
+    /* Offset anchor scrolls so they don't land under the fixed nav. */
+    scroll-padding-top: 96px;
   }
 
   body {
-    font-family: var(--font-body), ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 15px;
+    font-family: var(--font-body);
+    /* The brand's paragraphs are notably light. */
+    font-weight: 300;
+    font-size: 1rem;
     line-height: 1.6;
-    background: var(--color-bg);
-    color: var(--color-ink);
+    background: var(--color-ivory-100);
+    color: var(--color-charcoal-700);
+    text-wrap: pretty;
   }
 
+  /* Headings are Chakra Petch, UPPERCASE, Regular — set tight so
+     multi-line uppercase reads as a solid block. */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading), system-ui, sans-serif;
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: var(--tracking-tight);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: var(--leading-heading);
+    letter-spacing: 0;
     text-transform: uppercase;
+    color: var(--color-charcoal-800);
+    text-wrap: balance;
+  }
+
+  h1 {
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+  }
+
+  strong {
+    font-weight: 500;
   }
 
   ::selection {
-    background: var(--color-lime);
-    color: #000;
+    background: var(--color-green-500);
+    color: var(--color-charcoal-800);
   }
 
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  /* Focus is always visible, never removed. */
+  :focus-visible {
+    outline: 2px solid var(--color-green-500);
+    outline-offset: 2px;
   }
 
   button {
@@ -57,7 +138,8 @@
 
   input, textarea, select {
     font-family: var(--font-body);
-    color: var(--color-ink);
+    font-weight: 300;
+    color: var(--color-charcoal-700);
     /* 16px+ prevents iOS Safari from zooming the page on focus. */
     font-size: 16px;
   }
@@ -65,40 +147,60 @@
   input:-webkit-autofill,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
-    -webkit-text-fill-color: #fff;
-    -webkit-box-shadow: 0 0 0 1000px #000 inset;
-    caret-color: #fff;
+    -webkit-text-fill-color: var(--color-charcoal-800);
+    -webkit-box-shadow: 0 0 0 1000px var(--color-white) inset;
+    caret-color: var(--color-charcoal-800);
   }
 }
 
 @layer utilities {
+  /* Micro label: Inter Medium 11px at 0.14em, uppercase. */
   .eyebrow {
     font-family: var(--font-body);
-    font-size: 11px;
-    letter-spacing: var(--tracking-wider);
+    font-weight: 500;
+    font-size: 0.6875rem;
+    letter-spacing: var(--tracking-label);
     text-transform: uppercase;
-    color: var(--color-lime);
+    color: var(--color-charcoal-500);
   }
 
-  .rule-dotted {
-    background-image: linear-gradient(to right, var(--color-lime) 50%, transparent 50%);
-    background-size: 8px 1px;
-    background-repeat: repeat-x;
-    background-position: center;
-    height: 1px;
+  .eyebrow-inverse {
+    color: rgb(255 255 255 / 0.62);
+  }
+
+  /* Green emphasis inside a headline — the brand's flagship contrast
+     device. Display sizes only; green is never used for body copy. */
+  .emph {
+    color: var(--color-emph);
+  }
+
+  /* On charcoal, the full-strength brand green has ample contrast. */
+  .on-dark .emph,
+  .emph-inverse {
+    color: var(--color-green-500);
+  }
+
+  .measure-body {
+    max-width: 62ch;
+  }
+
+  .measure-narrow {
+    max-width: 44ch;
   }
 
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 }
 
+/* Scroll reveal: a 16px rise + fade, per the motion tokens.
+   Nothing scales on entry, nothing rotates. */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .fade-up {
-  animation: fadeUp 0.7s ease-out both;
+  animation: fadeUp 700ms var(--ease-standard) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
