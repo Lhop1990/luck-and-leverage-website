@@ -12,9 +12,9 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center min-h-11 text-xl hover:opacity-70 transition-opacity"
+              className="inline-flex items-center min-h-11 hover:opacity-70 transition-opacity"
             >
-              <Logo variant="stacked" tone="light" />
+              <Logo tone="light" />
             </Link>
             <p className="mt-6 text-sm max-w-[34ch]">
               Systems that win the best recruiters &amp; talent leaders quickly

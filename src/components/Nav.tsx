@@ -41,7 +41,7 @@ export function Nav() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link
             href="/"
-            className="inline-flex items-center min-h-11 text-base md:text-lg hover:opacity-70 transition-opacity"
+            className="inline-flex items-center min-h-11 hover:opacity-70 transition-opacity"
             aria-label="Luck and Leverage — home"
           >
             <Logo />
