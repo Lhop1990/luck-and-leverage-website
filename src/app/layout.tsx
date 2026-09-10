@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Space_Mono } from "next/font/google";
+import { Chakra_Petch, Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
-// Barlow Condensed is used as a visually equivalent substitute for
-// "Open Sans Condensed" (which Google removed as a standalone family in
-// favor of Open Sans + width axis). Same compressed editorial feel.
-const heading = Barlow_Condensed({
-  variable: "--font-heading",
+// Brand display face. The brand package ships Chakra Petch as a .ttc
+// collection, which browsers cannot load, so it is served from Google
+// Fonts — identical typeface, different delivery.
+const chakra = Chakra_Petch({
+  variable: "--font-chakra",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const body = Space_Mono({
-  variable: "--font-body",
+// Brand body face. Supplied as OTFs in the brand package; served here
+// from Google Fonts as a variable font.
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -64,20 +65,20 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: "#000000",
-  colorScheme: "dark" as const,
+  themeColor: "#f5f3ee",
+  colorScheme: "light" as const,
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable}`}>
-      <body className="min-h-screen flex flex-col bg-bg text-ink">
+    <html lang="en" className={`${chakra.variable} ${inter.variable}`}>
+      <body className="min-h-screen flex flex-col bg-ivory-100 text-charcoal-700">
         <GoogleAnalytics />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-3 focus:left-3 focus:px-4 focus:py-2 focus:bg-lime focus:text-bg focus:font-bold focus:text-xs focus:uppercase focus:tracking-wider focus:outline-none"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-3 focus:left-3 focus:px-4 focus:py-2 focus:bg-green-500 focus:text-charcoal-800 focus:font-heading focus:font-medium focus:text-xs focus:uppercase focus:tracking-nav"
         >
           Skip to main content
         </a>

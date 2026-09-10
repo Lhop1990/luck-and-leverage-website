@@ -1,31 +1,34 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
+import { Rule } from "@/components/Section";
+
+/* The footer is the site's dark anchor — charcoal at its deepest step. */
 
 export function Footer() {
   return (
-    <footer className="border-t border-rule mt-24">
-      <div className="mx-auto max-w-7xl px-6 md:px-10 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="bg-charcoal-900 text-white/62 on-dark">
+      <div className="mx-auto max-w-[1320px] px-5 md:px-8 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
           <div>
             <Link
               href="/"
-              className="inline-flex items-center min-h-[44px] font-heading uppercase tracking-tight text-xl font-bold hover:text-lime focus-visible:text-lime focus-visible:outline-none transition-colors"
+              className="inline-flex items-center min-h-11 text-xl hover:opacity-70 transition-opacity"
             >
-              Luck <span className="text-lime ml-1.5">&amp;</span>
-              <span className="ml-1.5">Leverage</span>
+              <Logo variant="stacked" tone="light" />
             </Link>
-            <p className="mt-4 text-sm text-ink/60 max-w-xs">
+            <p className="mt-6 text-sm max-w-[34ch]">
               Systems that win the best recruiters &amp; talent leaders quickly
               &amp; within budget.
             </p>
           </div>
 
           <div>
-            <p className="eyebrow mb-4">Explore</p>
-            <ul className="space-y-2 text-sm">
+            <p className="eyebrow eyebrow-inverse mb-4">Explore</p>
+            <ul className="flex flex-col">
               <li>
                 <Link
                   href="/obsession-framework"
-                  className="inline-flex items-center min-h-[44px] text-ink/80 hover:text-lime focus-visible:text-lime focus-visible:outline-none transition-colors"
+                  className="inline-flex items-center min-h-11 font-heading text-xs uppercase tracking-nav hover:text-green-500 transition-colors"
                 >
                   The Obsession Framework
                 </Link>
@@ -33,7 +36,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/case-studies"
-                  className="inline-flex items-center min-h-[44px] text-ink/80 hover:text-lime focus-visible:text-lime focus-visible:outline-none transition-colors"
+                  className="inline-flex items-center min-h-11 font-heading text-xs uppercase tracking-nav hover:text-green-500 transition-colors"
                 >
                   Case Studies
                 </Link>
@@ -41,7 +44,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center min-h-[44px] text-ink/80 hover:text-lime focus-visible:text-lime focus-visible:outline-none transition-colors"
+                  className="inline-flex items-center min-h-11 font-heading text-xs uppercase tracking-nav hover:text-green-500 transition-colors"
                 >
                   Contact
                 </Link>
@@ -50,19 +53,21 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="eyebrow mb-4">Start a conversation</p>
+            <p className="eyebrow eyebrow-inverse mb-4">Start a conversation</p>
             <Link
               href="/contact"
-              className="inline-flex items-center min-h-[44px] px-5 border border-lime text-lime text-xs uppercase tracking-wider hover:bg-lime hover:text-bg focus-visible:bg-lime focus-visible:text-bg focus-visible:outline-none transition-colors"
+              className="inline-flex items-center justify-center min-h-11 px-6 bg-green-500 text-charcoal-800 font-heading font-medium text-xs uppercase tracking-nav hover:bg-green-400 active:bg-green-600 transition-colors"
             >
               Book an introduction call
             </Link>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-rule flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-ink/60">
+        <Rule tone="inverse" className="mt-12 mb-6" />
+
+        <div className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs uppercase tracking-label">
           <p>© {new Date().getFullYear()} Luck &amp; Leverage. All rights reserved.</p>
-          <p className="uppercase tracking-wider">Advisory · Search</p>
+          <p>Advisory · Search</p>
         </div>
       </div>
     </footer>

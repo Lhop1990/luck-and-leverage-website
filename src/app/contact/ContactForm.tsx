@@ -7,27 +7,30 @@ import type { Service } from "@/lib/leadSchema";
 
 const initial: FormState = { status: "idle" };
 
+// Square corners, hairline border, white fill — form primitives are
+// styled from the brand tokens (the guidelines define no form palette).
 const fieldBase =
-  "w-full bg-transparent border-b border-ink/25 px-0 py-3 text-base text-ink placeholder:text-ink/45 focus:outline-none focus-visible:border-lime focus:border-lime transition-colors";
+  "w-full bg-white border border-ivory-400 rounded-none px-4 py-3 min-h-11 text-base text-charcoal-700 " +
+  "placeholder:text-charcoal-400 focus:outline-none focus:border-charcoal-800 transition-colors duration-[140ms]";
 const labelBase =
-  "block text-[10px] uppercase tracking-wider text-ink/60 mb-2";
+  "block font-body font-medium text-[11px] uppercase tracking-label text-charcoal-500 mb-2";
 
 export function ContactForm({ defaultService }: { defaultService?: Service }) {
   const [state, formAction] = useActionState(submitLead, initial);
 
   if (state.status === "success") {
     return (
-      <div
-        role="status"
-        className="border border-lime/60 p-8 md:p-10 bg-lime/[0.04]"
-      >
+      <div role="status" className="border-l-[3px] border-green-500 bg-ivory-100 p-8 md:p-10">
         <p className="eyebrow mb-4">Message received</p>
-        <p className="font-heading text-3xl md:text-4xl text-lime leading-tight">
+        <p className="font-heading uppercase text-2xl md:text-3xl text-charcoal-800 leading-[1.1]">
           {state.message}
         </p>
-        <p className="mt-6 text-sm text-ink/70">
+        <p className="mt-6 text-sm text-charcoal-500">
           In the meantime, feel free to read{" "}
-          <a href="/obsession-framework" className="text-lime underline-offset-4 hover:underline">
+          <a
+            href="/obsession-framework"
+            className="text-green-700 border-b border-charcoal/14 hover:border-green-500 transition-colors"
+          >
             the Obsession Framework
           </a>
           .
@@ -39,11 +42,11 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
   const err = state.errors ?? {};
 
   return (
-    <form action={formAction} noValidate className="space-y-8">
+    <form action={formAction} noValidate className="flex flex-col gap-8">
       {state.status === "error" && state.message && (
         <p
           role="alert"
-          className="border border-red-500/50 bg-red-500/10 text-red-200 text-sm px-4 py-3"
+          className="border border-error bg-error-surface text-error text-sm px-4 py-3"
         >
           {state.message}
         </p>
@@ -61,7 +64,7 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
         <div className="md:col-span-2">
           <label htmlFor="service" className={labelBase}>
             Which service are you interested in discussing with us?
-            <span className="text-lime" aria-hidden> *</span>
+            <span className="text-green-700" aria-hidden> *</span>
           </label>
           <div className="relative">
             <select
@@ -81,14 +84,14 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
             </select>
             <svg
               aria-hidden
-              className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-lime"
-              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+              className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-charcoal-500"
+              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"
             >
               <path d="M6 9l6 6 6-6" />
             </svg>
           </div>
           {err.service && (
-            <p id="service-error" className="mt-2 text-xs text-red-300">
+            <p id="service-error" className="mt-2 text-xs text-error">
               {err.service}
             </p>
           )}
@@ -97,7 +100,7 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
         <div className="md:col-span-2">
           <label htmlFor="howHeard" className={labelBase}>
             How did you hear about us?
-            <span className="text-lime" aria-hidden> *</span>
+            <span className="text-green-700" aria-hidden> *</span>
           </label>
           <textarea
             id="howHeard"
@@ -110,7 +113,7 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
             aria-describedby={err.howHeard ? "howHeard-error" : undefined}
           />
           {err.howHeard && (
-            <p id="howHeard-error" className="mt-2 text-xs text-red-300">
+            <p id="howHeard-error" className="mt-2 text-xs text-error">
               {err.howHeard}
             </p>
           )}
@@ -125,9 +128,9 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
         </div>
       </div>
 
-      <div className="pt-6 border-t border-rule">
+      <div className="pt-6 border-t border-charcoal/14">
         <SubmitButton />
-        <p className="mt-4 text-xs text-ink/50">
+        <p className="mt-4 text-xs text-charcoal-500">
           Your details go directly to the founders. We do not share them.
         </p>
       </div>
@@ -157,7 +160,7 @@ function Field({
       <label htmlFor={name} className={labelBase}>
         {label}
         {required && (
-          <span className="text-lime" aria-hidden>
+          <span className="text-green-700" aria-hidden>
             {" "}
             *
           </span>
@@ -175,7 +178,7 @@ function Field({
         aria-describedby={error ? `${name}-error` : undefined}
       />
       {error && (
-        <p id={`${name}-error`} className="mt-2 text-xs text-red-300">
+        <p id={`${name}-error`} className="mt-2 text-xs text-error">
           {error}
         </p>
       )}
@@ -189,14 +192,10 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex items-center justify-center gap-2 px-7 min-h-[48px] bg-lime text-bg text-xs uppercase tracking-wider font-bold transition-all duration-200 hover:bg-ink hover:text-lime focus-visible:bg-ink focus-visible:text-lime focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50 disabled:cursor-not-allowed"
+      className="inline-flex items-center justify-center gap-3 px-8 min-h-13 bg-green-500 text-charcoal-800 font-heading font-medium text-[13px] uppercase tracking-nav rounded-none transition-colors duration-[140ms] hover:bg-green-400 active:bg-green-600 active:translate-y-px disabled:opacity-40 disabled:cursor-not-allowed"
     >
       {pending ? "Sending…" : "Send message"}
-      {!pending && (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-      )}
+      {!pending && <span aria-hidden>&#8594;</span>}
     </button>
   );
 }
