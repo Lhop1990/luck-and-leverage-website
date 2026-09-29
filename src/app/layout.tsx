@@ -57,11 +57,8 @@ export const metadata: Metadata = {
     description:
       "Most firms want to hire great recruiters. Few are obsessive enough to win them.",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-  },
+  // Icons come from the app/icon.svg file convention — the brand mark on
+  // a charcoal ground. No `icons` entry here, or it would override it.
 };
 
 export const viewport = {
