@@ -4,7 +4,7 @@ export const ServiceEnum = z.enum(["advisory", "search"]);
 
 export const LeadSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(80),
-  lastName: z.string().trim().min(1, "Surname is required").max(80),
+  lastName: z.string().trim().min(1, "Last name is required").max(80),
   email: z.string().trim().toLowerCase().email("Enter a valid email"),
   phone: z
     .string()

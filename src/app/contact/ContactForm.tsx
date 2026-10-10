@@ -54,7 +54,7 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
         <Field name="firstName" label="First name" error={err.firstName} autoComplete="given-name" required />
-        <Field name="lastName" label="Surname" error={err.lastName} autoComplete="family-name" required />
+        <Field name="lastName" label="Last name" error={err.lastName} autoComplete="family-name" required />
         <Field name="email" label="Email address" type="email" inputMode="email" error={err.email} autoComplete="email" required />
         <Field name="phone" label="Contact number" type="tel" inputMode="tel" error={err.phone} autoComplete="tel" required />
         <div className="md:col-span-2">
@@ -131,7 +131,7 @@ export function ContactForm({ defaultService }: { defaultService?: Service }) {
       <div className="pt-6 border-t border-charcoal/14">
         <SubmitButton />
         <p className="mt-4 text-xs text-charcoal-500">
-          Your details go directly to the founders. We do not share them.
+          We read every message. We do not share your details.
         </p>
       </div>
     </form>

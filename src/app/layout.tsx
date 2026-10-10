@@ -26,7 +26,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://luckandleverage.com"),
   title: {
-    default: "Luck & Leverage — Win the best recruiters",
+    default: "Luck & Leverage | Win the best recruiters",
     template: "%s · Luck & Leverage",
   },
   description:
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "America",
   ],
   openGraph: {
-    title: "Luck & Leverage — Win the best recruiters",
+    title: "Luck & Leverage | Win the best recruiters",
     description:
       "Most firms want to hire great recruiters. Few are obsessive enough to win them.",
     type: "website",

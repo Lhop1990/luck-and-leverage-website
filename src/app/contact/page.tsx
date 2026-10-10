@@ -83,7 +83,7 @@ export default async function ContactPage({ searchParams }: Props) {
               <p className="eyebrow mb-4">Search</p>
               <p className="text-base leading-relaxed">
                 For urgent or senior hires that need the heavy lift handled
-                properly. Personally run by the founders. Six-month guarantee.
+                properly. Personally run by the founders.
               </p>
             </div>
             <div className="pt-6 border-t border-charcoal/14">
@@ -103,7 +103,7 @@ export default async function ContactPage({ searchParams }: Props) {
                 <li className="flex gap-3">
                   <span className="font-heading text-green-700 tabular-nums">03</span>
                   <span>
-                    First call is 30 minutes. No deck, no pitch — we want to
+                    First call is 30 minutes. No deck and no pitch. We want to
                     understand the problem.
                   </span>
                 </li>

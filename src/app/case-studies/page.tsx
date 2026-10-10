@@ -7,7 +7,7 @@ import { caseStudies } from "@/lib/caseStudies";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Real executive search engagements run by Luck & Leverage — the brief, the process, and the result. How leading recruitment and search firms built their teams.",
+    "Real executive search engagements run by Luck & Leverage: the brief, the process, and the result. How recruitment and search firms built their teams.",
 };
 
 export default function CaseStudies() {
@@ -22,7 +22,7 @@ export default function CaseStudies() {
             <span className="emph">build their teams.</span>
           </h1>
           <p className="mt-10 max-w-2xl text-lg text-charcoal-700 leading-relaxed">
-            A look behind recent executive search engagements — the brief, the
+            A look behind recent executive search engagements: the brief, the
             process we ran, and the result. Real clients, real outcomes.
           </p>
         </Container>
