@@ -39,9 +39,9 @@ export const caseStudies: CaseStudy[] = [
     category: "Executive search build · San Francisco & New York",
     title: "How Coastal launched a VC executive search practice in 60 days",
     summary:
-      "Turned a founder-led side function into a dedicated retained search practice: a senior partner hired and multiple VP/C-level searches running in 60 days.",
+      "Turned a founder-led side function into a dedicated retained search practice — a senior partner hired and multiple VP/C-level searches running in 60 days.",
     intro: [
-      "Coastal had already built a strong reputation as an early-stage tech search firm supporting Seed to Series C companies across San Francisco and New York. It was well known for engineering and GTM recruiting, with deep relationships across founders and venture capital networks.",
+      "Coastal had already built a strong reputation as an early-stage tech search firm supporting Seed to Series C companies across San Francisco and New York — well known for engineering and GTM recruiting, with deep relationships across founders and venture capital networks.",
       "As demand for executive hiring increased, Coastal saw an opportunity to evolve from a founder-led recruiting business into a true executive search partner for venture-backed companies.",
     ],
     metrics: [
@@ -186,10 +186,10 @@ export const caseStudies: CaseStudy[] = [
     title:
       "How Greco Advisors secured a $3m+ search leader in 100 days to launch its US business",
     summary:
-      "Placed a passive, multi-million-dollar biller from a prestigious firm to launch Greco's New York practice, within budget, with the offer accepted in 100 days.",
+      "Placed a passive, multi-million-dollar biller from a prestigious firm to launch Greco's New York practice — within budget, offer accepted in 100 days.",
     intro: [
       "Greco Advisors had already built a strong PE and portfolio operations search business across Europe. As US demand increased, the next step was building in New York.",
-      "The challenge was finding someone capable of leading that build from the ground up: a senior operator with retained-search credibility, a strong PE network and a track record at the very top end of the market.",
+      "The challenge was finding someone capable of leading that build from the ground up — a senior operator with retained-search credibility, a strong PE network and a track record at the very top end of the market.",
       "The bar was very high. Greco wasn't looking for available talent; they were looking for people already billing at serious levels inside established firms.",
     ],
     metrics: [
@@ -201,16 +201,16 @@ export const caseStudies: CaseStudy[] = [
       "Greco had strong momentum in Europe but no dedicated US leadership on the ground.",
       "The business needed someone who could build a PE value-creation / portfolio operations search practice in New York.",
       "The target profile was extremely narrow: retained-search background, PE exposure, entrepreneurial mindset and proven top-end billing performance.",
-      "The benchmark was search leaders already producing at elite levels. Most of them were highly compensated, deeply embedded in their firms and not actively considering a move.",
+      "The benchmark was search leaders already producing at elite levels — most of them highly compensated, deeply embedded in their firms and not actively considering a move.",
       "Greco needed fast access to a market that is normally slow, considered and relationship-driven.",
     ],
     afterLead:
-      "Greco successfully hired a senior executive search leader to launch and scale its US business, and gained a clear blueprint for future growth in North America. Key outcomes included:",
+      "Greco successfully hired a senior executive search leader to launch and scale its US business — and gained a clear blueprint for future growth in North America. Key outcomes included:",
     after: [
       "Appointed a proven executive search leader from a prestigious firm, with a track record of generating more than $3m annually and previous P&L ownership.",
       "Completed the hire within 100 days despite targeting a highly constrained, predominantly passive talent pool.",
       "Gained access to a curated group of elite New York PE search operators, including multiple leaders generating $1m+ in annual billings.",
-      "Validated the ideal profile to build Greco's North American business, combining PE search expertise, practice-building capability and entrepreneurial leadership.",
+      "Validated the ideal profile to build Greco's North American business — combining PE search expertise, practice-building capability and entrepreneurial leadership.",
       "Established a repeatable compensation and equity framework for attracting senior US talent in a highly competitive market.",
       "Built a pipeline and roadmap for future US hires, giving Greco a foundation for scaling beyond the initial leadership appointment.",
     ],
@@ -238,7 +238,7 @@ export const caseStudies: CaseStudy[] = [
         blocks: [
           {
             type: "p",
-            text: "We used direct outreach from partners, network-led introductions and back-channel referencing to access candidates who were unlikely to engage through a traditional process, including senior billers already generating multi-million-dollar revenues inside established firms.",
+            text: "We used direct outreach from partners, network-led introductions and back-channel referencing to access candidates who were unlikely to engage through a traditional process — including senior billers already generating multi-million-dollar revenues inside established firms.",
           },
           {
             type: "p",
@@ -288,8 +288,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     conclusion: [
       "Greco needed fast access to a very small group of recruiters operating at the top end of the PE search market.",
-      "The process focused on quality, speed and tight calibration from the start, getting Greco into conversations with talent already performing at the level they could build a business around.",
-      "The result was the successful placement of a passive, multi-million-dollar revenue generator from a prestigious executive search firm: a former P&L owner, based in New York. The hire was made within budget, with the offer accepted within 100 days of starting the search.",
+      "The process focused on quality, speed and tight calibration from the start — getting Greco into conversations with talent already performing at the level they could build a business around.",
+      "The result was the successful placement of a passive, multi-million-dollar revenue generator from a prestigious executive search firm — a former P&L owner, based in New York. The hire was made within budget, with the offer accepted within 100 days of starting the search.",
     ],
     testimonial: {
       quote:

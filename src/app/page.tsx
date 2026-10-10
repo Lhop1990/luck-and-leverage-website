@@ -49,10 +49,10 @@ const searchWhen = [
 const stats = [
   { number: "300+", label: "Recruiter and executive search placements in America" },
   { number: "10+", label: "Businesses launched in America" },
-  { number: "4", label: "M&A deals Jack worked on at Tempting Ventures" },
+  { number: "4", label: "M&A transactions, with $20m+ enterprise value created" },
   { number: "$0→$50m", label: "Organic growth in a previous recruitment business as part of the senior leadership team" },
   { number: "90%", label: "Referral-led client base" },
-  { number: "12 years", label: "Jack in rec-to-rec, 7 of them focused on the US market" },
+  { number: "6 Month", label: "Guarantee on every search" },
 ];
 
 /* A short green rule, used where another brand would reach for a bullet. */
@@ -261,7 +261,7 @@ export default function Home() {
             </ul>
             <div className="mt-auto pt-2">
               <Button href="/contact?service=advisory" variant="outline">
-                Inquire now
+                Enquire now
               </Button>
             </div>
           </article>
@@ -281,7 +281,7 @@ export default function Home() {
               </p>
               <p>
                 Every search is personally run through the Obsession Framework
-                by the founders.
+                by the founders and backed by a six-month guarantee.
               </p>
             </div>
             <p className="eyebrow mt-8 mb-3">Best when</p>
@@ -390,9 +390,9 @@ export default function Home() {
               </p>
               <p>
                 Earlier, Ollie built and led technology recruitment teams
-                across financial services, cloud, data, and AI, including
-                scaling Eximius Group&apos;s Technology practice into a
-                million-dollar-plus revenue division.
+                across financial services, cloud, data, and AI — including
+                scaling Eximius Group&apos;s Technology practice into over a
+                million dollar revenue division.
               </p>
             </div>
           </article>

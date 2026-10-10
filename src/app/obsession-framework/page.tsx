@@ -37,7 +37,7 @@ const framework = [
   {
     name: "Selection",
     short: "Are we measuring what actually predicts success?",
-    body: "Most interview loops measure interview ability. We design selection around the work itself: performance, judgment, and the ability to ramp fast.",
+    body: "Most interview loops measure interview ability. We design selection around the work itself — performance, judgment, and the ability to ramp fast.",
   },
   {
     name: "Interview Process",
@@ -52,7 +52,7 @@ const framework = [
   {
     name: "Nurture",
     short: "What happens between acceptance and day one?",
-    body: "Counter-offers, cold feet, and competing processes peak after the yes. The best firms run a process after the process, and it shows in their start rates.",
+    body: "Counter-offers, cold feet, and competing processes peak after the yes. The best firms run a process after the process — and it shows in their start rates.",
   },
 ];
 
